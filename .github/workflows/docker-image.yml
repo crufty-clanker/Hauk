@@ -16,7 +16,7 @@ jobs:
     steps:
       - # Check out repository
         name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
       - # Set up QEMU for multiarch support
         name: Set up QEMU
         uses: docker/setup-qemu-action@v3
