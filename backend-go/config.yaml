@@ -1,0 +1,59 @@
+# Hauk Go Backend Configuration
+# Copy this file to /etc/hauk/config.yaml and adjust as needed.
+
+# Storage backend ("redis")
+storage_backend: "redis"
+
+# Redis connection
+redis_host: "localhost"
+redis_port: 6379
+redis_use_auth: false
+redis_auth: ""
+redis_prefix: "hauk"
+
+# Authentication method ("password", "htpasswd", "ldap")
+auth_method: "password"
+
+# Password authentication
+password_hash: '$2y$10$4ZP1iY8A3dZygXoPgsXYV.S3gHzBbiT9nSfONjhWrvMxVPkcFq1Ka'
+
+# HTPasswd authentication
+htpasswd_path: "/etc/hauk/users.htpasswd"
+
+# LDAP authentication
+ldap_uri: "ldaps://ldap.example.com:636"
+ldap_start_tls: false
+ldap_base_dn: "ou=People,dc=example,dc=com"
+ldap_bind_dn: "cn=admin,dc=example,dc=com"
+ldap_bind_pass: "Adm1nP4ssw0rd"
+ldap_user_filter: "(uid=%s)"
+
+# Link configuration
+allow_link_req: true
+reserve_whitelist: false
+link_style: 0  # LINK_4_PLUS_4_UPPER_CASE
+
+# Map configuration
+map_tile_uri: "https://tile.openstreetmap.org/{z}/{x}/{y}.png"
+map_attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>'
+default_zoom: 14
+max_zoom: 19
+
+# Timing configuration
+max_duration: 86400
+min_interval: 1
+offline_timeout: 30
+request_timeout: 10
+max_cached_pts: 3
+max_shown_pts: 100
+v_data_points: 2
+
+# Display configuration
+trail_color: "#d80037"
+velocity_unit: "kmh"
+
+# Public URL
+public_url: "https://example.com/"
+
+# Server port
+server_port: 8080

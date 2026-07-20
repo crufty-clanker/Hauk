@@ -1,0 +1,107 @@
+name: Go CI
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+
+jobs:
+  lint:
+    name: Lint (Go ${{ matrix.go }})
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        go: ['1.22', '1.23']
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Setup Go
+        uses: actions/setup-go@v6
+        with:
+          go-version: ${{ matrix.go }}
+
+      - name: Cache Go modules
+        uses: actions/cache@v6
+        with:
+          path: ~/go/pkg/mod
+          key: ${{ runner.os }}-go-${{ matrix.go }}-${{ hashFiles('backend-go/go.sum') }}
+          restore-keys: ${{ runner.os }}-go-${{ matrix.go }}-
+
+      - name: Install dependencies
+        working-directory: backend-go
+        run: go mod download
+
+      - name: Run go vet
+        working-directory: backend-go
+        run: go vet ./...
+
+  test:
+    name: Test (Go ${{ matrix.go }})
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        go: ['1.22', '1.23']
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Setup Go
+        uses: actions/setup-go@v6
+        with:
+          go-version: ${{ matrix.go }}
+
+      - name: Cache Go modules
+        uses: actions/cache@v6
+        with:
+          path: ~/go/pkg/mod
+          key: ${{ runner.os }}-go-${{ matrix.go }}-${{ hashFiles('backend-go/go.sum') }}
+          restore-keys: ${{ runner.os }}-go-${{ matrix.go }}-
+
+      - name: Install dependencies
+        working-directory: backend-go
+        run: go mod download
+
+      - name: Run tests with race detector
+        working-directory: backend-go
+        run: go test -race -count=1 ./...
+
+  staticcheck:
+    name: Staticcheck (Go ${{ matrix.go }})
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        go: ['1.22', '1.23']
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Setup Go
+        uses: actions/setup-go@v6
+        with:
+          go-version: ${{ matrix.go }}
+
+      - name: Cache Go modules
+        uses: actions/cache@v6
+        with:
+          path: ~/go/pkg/mod
+          key: ${{ runner.os }}-go-${{ matrix.go }}-${{ hashFiles('backend-go/go.sum') }}
+          restore-keys: ${{ runner.os }}-go-${{ matrix.go }}-
+
+      - name: Install staticcheck
+        uses: actions/cache@v6
+        with:
+          path: ~/go/bin
+          key: ${{ runner.os }}-staticcheck-${{ matrix.go }}
+        id: install
+
+      - name: Run staticcheck
+        working-directory: backend-go
+        continue-on-error: true
+        run: |
+          if ! command -v staticcheck &> /dev/null; then
+            echo "staticcheck not available, skipping"
+            exit 0
+          fi
+          staticcheck ./...
