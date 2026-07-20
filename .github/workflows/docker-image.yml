@@ -27,7 +27,7 @@ jobs:
       - # Set proper tags
         name: Docker metadata
         id: docker_meta # you'll use this in the next step
-        uses: docker/metadata-action@v5
+        uses: docker/metadata-action@v6
         with:
           images: bilde2910/hauk
           tags: |
