@@ -20,9 +20,15 @@
 - `.github/dependabot.yml` — Automated dependency updates. Configured with `delete-dependent-on-merge: true` and grouped by ecosystem (`github-actions`, `php-backend`, `frontend`, `android-app`, `docker`) so each ecosystem gets a single PR.
 
 **CI/CD:**
-- **PHP CI** — Lint (PHP-CS-Fixer) + static analysis (PHPStan) on PHP 8.2 & 8.3.
+- **PHP CI** — Lint (PHP-CS-Fixer) + static analysis (PHPStan) + PHPUnit on PHP 8.2 & 8.3.
 - **Frontend CI** — ESLint + Prettier formatting check + html-validate.
 - **Android CI** — Build debug APK + unit tests with JDK 17 / Gradle.
+- **Docker** — Removed from CI. Use podman locally with the Dockerfiles in `docker/`.
+
+**Pre-commit checks (run locally before committing):**
+- Modified **PHP** files → `composer run lint` + `composer run analyse` + `composer run test`
+- Modified **frontend** files → `npm run lint` (ESLint + Prettier + html-validate)
+- Modified **Android** files → `cd android && ./gradlew testDebugUnitTest --no-daemon`
 
 
 **Important:**
