@@ -1,0 +1,26 @@
+{
+    "name": "hauk/hauk",
+    "description": "Hauk - A fully open source, self-hosted location sharing service",
+    "type": "project",
+    "license": "Apache-2.0",
+    "require": {
+        "php": "^8.2"
+    },
+    "require-dev": {
+        "phpstan/phpstan": "^1.10",
+        "friendsofphp/php-cs-fixer": "^3.49",
+        "phpunit/phpunit": "^10.5"
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "phpstan/extension-installer": true
+        }
+    },
+    "scripts": {
+        "lint": "php-cs-fixer fix --dry-run --diff",
+        "lint:fix": "php-cs-fixer fix",
+        "analyse": "phpstan analyse --no-progress",
+        "test": "phpunit --configuration phpunit.xml"
+    }
+}

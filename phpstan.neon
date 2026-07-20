@@ -1,0 +1,11 @@
+parameters:
+    level: 5
+    paths:
+        - backend-php/
+    ignoreErrors:
+        # API scripts use die() for error handling (intentional for CLI-style scripts)
+        - '#Called function die\(\)#'
+        # Config is loaded dynamically, PHPStan can't resolve it
+        - '#Parameter \#1 \$.*/.* of function getConfig expects#'
+        # MemWrapper interface is implemented by two classes with same name
+    checkMissingIterableValueType: false
