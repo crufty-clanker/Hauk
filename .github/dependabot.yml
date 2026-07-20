@@ -6,6 +6,10 @@ updates:
     schedule:
       interval: "weekly"
     delete-dependent-on-merge: true
+    groups:
+      github-actions:
+        patterns:
+          - "*"
 
   # Composer (PHP backend dependencies)
   - package-ecosystem: "composer"
@@ -13,6 +17,10 @@ updates:
     schedule:
       interval: "weekly"
     delete-dependent-on-merge: true
+    groups:
+      php-backend:
+        patterns:
+          - "*"
 
   # npm (frontend dependencies)
   - package-ecosystem: "npm"
@@ -20,6 +28,10 @@ updates:
     schedule:
       interval: "weekly"
     delete-dependent-on-merge: true
+    groups:
+      frontend:
+        patterns:
+          - "*"
 
   # Gradle (Android app dependencies)
   - package-ecosystem: "gradle"
@@ -27,6 +39,10 @@ updates:
     schedule:
       interval: "weekly"
     delete-dependent-on-merge: true
+    groups:
+      android-app:
+        patterns:
+          - "*"
 
   # Docker base images
   - package-ecosystem: "docker"
@@ -34,3 +50,9 @@ updates:
     schedule:
       interval: "daily"
     delete-dependent-on-merge: true
+    groups:
+      docker:
+        patterns:
+          - "*"
+
+
