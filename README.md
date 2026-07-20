@@ -10,6 +10,7 @@
 [![GitHub release (latest by date)](https://img.shields.io/github/v/release/bilde2910/Hauk)](https://github.com/bilde2910/Hauk/releases)
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/bilde2910/Hauk)
 [![Docker hub](https://img.shields.io/docker/pulls/bilde2910/hauk.svg)](https://hub.docker.com/r/bilde2910/hauk)
+[![AI-assisted development](https://img.shields.io/badge/AI--assisted_development-LLMs_and_agents-blue)](https://github.com/bilde2910/Hauk)
 
 [<img src="https://fdroid.gitlab.io/artwork/badge/get-it-on.png"
     alt="Get it on F-Droid"
