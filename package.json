@@ -1,0 +1,18 @@
+{
+  "name": "hauk",
+  "version": "1.0.0",
+  "description": "Self-hosted location sharing service",
+  "private": true,
+  "scripts": {
+    "lint": "eslint frontend/ && prettier --check 'frontend/**/*.{js,css}' && html-validate frontend/index.html",
+    "lint:fix": "prettier --write 'frontend/**/*.{js,css}' && eslint --fix frontend/"
+  },
+  "devDependencies": {
+    "eslint": "^8.57.0",
+    "html-validate": "^8.26.0",
+    "prettier": "^3.3.0"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

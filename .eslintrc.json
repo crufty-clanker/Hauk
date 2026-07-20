@@ -1,0 +1,30 @@
+{
+  "env": {
+    "browser": true,
+    "es2020": true
+  },
+  "parserOptions": {
+    "ecmaVersion": 2020,
+    "sourceType": "script"
+  },
+  "rules": {
+    "no-var": "warn",
+    "prefer-const": "warn",
+    "no-unused-vars": ["warn", { "argsIgnorePattern": "^_" }],
+    "no-console": "warn",
+    "eqeqeq": ["warn", "always", { "null": "ignore" }],
+    "curly": "warn",
+    "no-implicit-coercion": "warn",
+    "no-throw-literal": "error",
+    "no-duplicate-imports": "error",
+    "no-extra-semi": "warn",
+    "no-unreachable": "warn",
+    "prefer-template": "warn",
+    "yoda": ["warn", "never"],
+    "semi": ["warn", "always"],
+    "quotes": ["warn", "single", { "avoidEscape": true, "allowTemplateLiterals": false }],
+    "comma-dangle": ["warn", "always-multiline"],
+    "indent": ["warn", 4, { "SwitchCase": 1 }],
+    "max-len": ["warn", { "code": 120, "ignoreUrls": true, "ignoreStrings": true, "ignoreTemplateLiterals": true }]
+  }
+}
