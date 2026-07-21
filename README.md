@@ -2,15 +2,17 @@
 
 # Hauk
 
-[![GitHub license](https://img.shields.io/github/license/bilde2910/Hauk)](https://github.com/bilde2910/Hauk/blob/master/LICENSE)
-[![GitHub issues](https://img.shields.io/github/issues/bilde2910/Hauk)](https://github.com/bilde2910/Hauk/issues)
+> **Note:** This is a fork of the original [Hauk](https://github.com/bilde2910/Hauk) project by [bilde2910](https://github.com/bilde2910).
+
+[![GitHub license](https://img.shields.io/github/license/crufty-clanker/Hauk)](https://github.com/crufty-clanker/Hauk/blob/master/LICENSE)
+[![GitHub issues](https://img.shields.io/github/issues/crufty-clanker/Hauk)](https://github.com/crufty-clanker/Hauk/issues)
 [![Translation status](https://traduki.varden.info/widgets/hauk/-/svg-badge.svg)](https://traduki.varden.info/engage/hauk/)
-[![GitHub stars](https://img.shields.io/github/stars/bilde2910/Hauk)](https://github.com/bilde2910/Hauk/stargazers)
+[![GitHub stars](https://img.shields.io/github/stars/crufty-clanker/Hauk)](https://github.com/crufty-clanker/Hauk/stargazers)
 [![F-Droid](https://img.shields.io/f-droid/v/info.varden.hauk)](https://f-droid.org/packages/info.varden.hauk/)
-[![GitHub release (latest by date)](https://img.shields.io/github/v/release/bilde2910/Hauk)](https://github.com/bilde2910/Hauk/releases)
-![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/bilde2910/Hauk)
+[![GitHub release (latest by date)](https://img.shields.io/github/v/release/crufty-clanker/Hauk)](https://github.com/crufty-clanker/Hauk/releases)
+![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/crufty-clanker/Hauk)
 [![Docker hub](https://img.shields.io/docker/pulls/bilde2910/hauk.svg)](https://hub.docker.com/r/bilde2910/hauk)
-[![AI-assisted development](https://img.shields.io/badge/AI--assisted_development-LLMs_and_agents-blue)](https://github.com/bilde2910/Hauk)
+[![AI-assisted development](https://img.shields.io/badge/AI--assisted_development-LLMs_and_agents-blue)](https://github.com/crufty-clanker/Hauk)
 
 [<img src="https://fdroid.gitlab.io/artwork/badge/get-it-on.png"
     alt="Get it on F-Droid"
@@ -32,7 +34,7 @@ phone, and you're good to go!
 
 ## Installation instructions
 
-1. Clone or download this repository:  `git clone https://github.com/bilde2910/Hauk.git`
+1. Clone or download this repository:  `git clone https://github.com/crufty-clanker/Hauk.git`
 2. Run `sudo ./install.sh -c web_root` where `web_root` is the folder you want
    to install Hauk in, for example `/var/www/html`. Follow the instructions
    given by the install script. Make sure to set a secure hashed password and
@@ -47,7 +49,7 @@ phone, and you're good to go!
 If you prefer not to use the install script, you can instead choose to copy the
 files manually.
 
-1. Clone or download this repository: `git clone https://github.com/bilde2910/Hauk.git`
+1. Clone or download this repository: `git clone https://github.com/crufty-clanker/Hauk.git`
 2. Copy all files in the `backend-php` and `frontend` folders to a common folder
    in your web root, for example `/var/www/html`.
 3. Modify `include/config.php` to your liking. Make sure to set a secure hashed
@@ -196,6 +198,4 @@ Hauk depends on volunteers to translate the project. Want to help out? Head over
 
 ## Donate
 
-Hauk is an ad-free, open source project, and I am not doing this for financial gain. Thus, my time spent making this is unpaid. I do however accept donations from anyone who appreciates my work enough that they feel inclined to compensate me, no matter the amount. Donations mean a lot to me, as they help cover costs associated with server upkeep, domains and hosting, and general cost of living, and they serve as an incentive for me to keep working on open-source projects.
-
-If you wish to donate to me, you may check out my [donations page](https://varden.info/donate.php) on my website.
+Hauk is an ad-free, open source project. The original project was created and maintained by [Mads Rosendahl](https://github.com/bilde2910), who deserves recognition for his years of work on this project. If you wish to support the original author, you may check out their [donations page](https://varden.info/donate.php).

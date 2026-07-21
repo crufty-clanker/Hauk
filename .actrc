@@ -1,0 +1,10 @@
+# act (https://github.com/nektos/act) configuration
+# This file is read automatically when you run `act` in this repo.
+#
+# -P <label>=<image>  Override the container image for a given runs-on label.
+# --workdir           Set the working directory for act.
+#
+# Using node:22 for a modern base image; act installs the tools each workflow
+# needs via its action steps (setup-php, setup-go, setup-java, etc.).
+-P ubuntu-latest=node:22-bookworm-slim
+--workdir .
